@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전예원 | Data Engineer Portfolio</title>
+<meta name="description" content="공공 API 수집부터 정제·DB 설계·벡터 검색·EC2 배포·운영까지, 데이터 파이프라인 전 과정을 직접 설계하고 운영한 신입 데이터 엔지니어 전예원의 포트폴리오">
+<meta property="og:title" content="전예원 | Data Engineer Portfolio">
+<meta property="og:description" content="판례 41,438건 수집 → 정제 → PostgreSQL·ChromaDB 적재 → 검색 응답 20~60초 → 0.68초 개선 → 실서비스 운영">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     ✏️ 여기만 채우면 됩니다: GitHub 주소와 이메일
+     비워 두면 해당 버튼이 자동으로 숨겨집니다.
+     ============================================================ -->
+<script>
+  window.PROFILE = {
+    github: "",   // 예: "https://github.com/yewon-jeon"
+    email:  ""    // 예: "yewon@example.com"
+  };
+</script>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="#top">전예원<span>Data Engineer</span></a>
+    <nav class="nav-links" aria-label="섹션">
+      <a href="#profile">Profile</a>
+      <a href="#lawsight">LawSight</a>
+      <a href="#mytaskpilot">My Task Pilot</a>
+      <a href="#modeling">Data Modeling</a>
+      <a href="#more">More</a>
+    </nav>
+    <a class="btn btn-sm" href="assets/portfolio.pdf" download>PDF</a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">DATA ENGINEER · 신입</p>
+      <h1>공공 API에서 실서비스까지,<br>데이터 파이프라인 전 과정을<br><em>직접 설계하고 운영</em>했습니다.</h1>
+      <p class="hero-sub">수집 · 정제 · 모델링 · 검색 인덱스 · 배포 · 운영</p>
+      <div class="hero-meta">
+        <strong>전예원</strong>
+        <span>수원대학교 컴퓨터소프트웨어학과 (2027.02 졸업예정) · DAsP</span>
+        <span>2026 한이음 드림업 LawSight 팀장 · 중간평가 상위 30% 우수 프로젝트</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#lawsight">대표 프로젝트 보기</a>
+        <a class="btn" href="assets/portfolio.pdf" download>포트폴리오 PDF</a>
+        <a class="btn js-github" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn js-email" href="#">Email</a>
+      </div>
+    </div>
+    <div class="layers" aria-label="서비스 계층별 수행 범위">
+      <div class="layer"><b>서비스</b><span>UI · API · 배포 · 운영</span></div>
+      <div class="layer"><b>기능</b><span>검색 · RAG · 분석 로직</span></div>
+      <div class="layer layer-on"><b>데이터</b><span>수집 · 정제 · DB 설계 · 벡터 인덱스</span></div>
+      <p class="layer-note">▲ 전체 프로젝트에서 데이터 파트를 주도</p>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<!-- ===================== PROFILE ===================== -->
+<section class="section" id="profile">
+  <div class="wrap">
+    <p class="kicker">PROFILE</p>
+    <h2>핵심 역량 요약</h2>
+    <p class="lead">데이터 수집·정제·모델링·검색 인덱스·배포를 Full Cycle로 구축하고 운영했습니다.</p>
+
+    <div class="profile-grid">
+      <div class="card">
+        <h3>학력</h3>
+        <p><b>수원대학교 컴퓨터소프트웨어학과</b><br>2023.03 – 2027.02 졸업예정<br><small>국어국문학과 입학 후 2학년 전과</small></p>
+      </div>
+      <div class="card">
+        <h3>자격 · 교육</h3>
+        <p><b>DAsP</b> 취득<br>SQLD · OCP 2026.11 응시 예정<br>오라클 DB 전문가 과정 수강 중<br><small>아이티윌 · 5개월 · 2026.06 ~ 2026.11</small><br><a class="ext" href="https://persistent-zinc-f8f.notion.site/5f841b6e7c7b41459dcb4788428c2ea3?v=f6b0fcf4a8404347b35e46012a00595b" target="_blank" rel="noopener">오라클 교육 학습 일지 ↗</a></p>
+      </div>
+      <div class="card">
+        <h3>활동</h3>
+        <p>2026 한이음 드림업 2개 프로젝트 수행<br><small>LawSight 팀장 · My Task Pilot 팀원</small><br><b>2개 과제 모두 중간평가 상위 30% 우수 프로젝트 · 장려상 후보</b></p>
+      </div>
+    </div>
+
+    <div class="links">
+      <a href="https://www.lawsight.co.kr" target="_blank" rel="noopener"><b>LawSight</b><span>www.lawsight.co.kr ↗</span></a>
+      <a href="https://www.mytaskpilot.kr" target="_blank" rel="noopener"><b>My Task Pilot</b><span>www.mytaskpilot.kr ↗</span></a>
+      <a href="https://movie-booking-platform-ui.vercel.app" target="_blank" rel="noopener"><b>영화 예매 플랫폼</b><span>movie-booking-platform-ui.vercel.app ↗</span></a>
+    </div>
+
+    <h3 class="sub">기술 스택</h3>
+    <div class="stack">
+      <div><span class="stack-k">DB</span><span class="tag">PostgreSQL (+pgvector)</span><span class="tag">Oracle</span><span class="tag">ERD 설계 · DA# Modeler</span></div>
+      <div><span class="stack-k">Data</span><span class="tag">ChromaDB</span><span class="tag">KoSBERT</span><span class="tag">BM25 + RRF 하이브리드 검색</span><span class="tag">Pandas</span></div>
+      <div><span class="stack-k">Backend / AI</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">Spring Boot · MyBatis</span><span class="tag">ML</span></div>
+      <div><span class="stack-k">Infra</span><span class="tag">AWS EC2</span><span class="tag">Linux</span><span class="tag">nginx</span><span class="tag">Git · GitHub</span><span class="tag">Notion</span></div>
+    </div>
+
+    <h3 class="sub">프로젝트별 수행 역할</h3>
+    <div class="table-scroll">
+      <table class="matrix">
+        <thead>
+          <tr><th rowspan="2">프로젝트</th><th colspan="3" class="grp-a">서비스 구성별 수행 범위</th><th colspan="3" class="grp-b">프로젝트 단계별 수행 범위</th></tr>
+          <tr><th>데이터</th><th>기능</th><th>서비스</th><th>분석</th><th>설계</th><th>개발</th></tr>
+        </thead>
+        <tbody>
+          <tr><th><a href="#lawsight">LawSight</a><small>팀 · 4인 · 팀장</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>수집·정제·DB·벡터DB</td><td><i class="co">협업</i>검색 연동·병목 개선</td><td><i class="lead-dot">주도</i>EC2 배포·운영</td>
+            <td><i class="lead-dot">주도</i>요구사항 35건 총괄</td><td><i class="lead-dot">주도</i>테이블/기능/화면 설계</td><td><i class="co">협업</i>파이프라인/기능/화면</td></tr>
+          <tr><th><a href="#mytaskpilot">My Task Pilot</a><small>팀 · 3인 · Data/AI</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>수집·pgvector·전환</td><td><i class="co">협업</i>RAG 개인화 기획·검증</td><td><i class="co">협업</i>제출 문서 총괄</td>
+            <td><i class="co">협업</i>요구사항 정의</td><td><i class="co">협업</i>테이블/기능/화면 설계</td><td><i class="co">협업</i>기능 구현/테스트</td></tr>
+          <tr><th><a href="#modeling">영화 예매 플랫폼</a><small>개인 · 단독</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>논리·물리 ERD</td><td><i class="lead-dot">주도</i>예약·좌석 JOIN 쿼리</td><td><i class="lead-dot">주도</i>웹 화면 구현</td>
+            <td><i class="lead-dot">주도</i>요구사항 정의서</td><td><i class="lead-dot">주도</i>DA# Modeler/화면 설계</td><td><i class="lead-dot">주도</i>Node.js · PostgreSQL</td></tr>
+          <tr><th><a href="#more">맞춤형 식단 관리 웹</a><small>개인 · 단독</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>공공데이터 수집</td><td><i class="lead-dot">주도</i>칼로리·영양 집계</td><td><i class="lead-dot">주도</i>차트 시각화</td>
+            <td><i class="lead-dot">주도</i>요구사항 정의서</td><td><i class="lead-dot">주도</i>기능/화면 설계</td><td><i class="lead-dot">주도</i>Spring Boot·MyBatis</td></tr>
+          <tr><th><a href="#more">신용 리스크 예측</a><small>개인 · 단독</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>결측·불균형 보정</td><td><i class="lead-dot">주도</i>10개 모델 비교·선정</td><td><i class="na">해당 없음</i></td>
+            <td><i class="lead-dot">주도</i>데이터 탐색·목표 설정</td><td><i class="lead-dot">주도</i>검증 전략 설계</td><td><i class="lead-dot">주도</i>모델링·Test 검증</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">모든 프로젝트에서 <b>데이터 파트를 주도</b>했습니다.</p>
+  </div>
+</section>
+
+<!-- ===================== PROJECT 01 ===================== -->
+<section class="section project" id="lawsight">
+  <div class="wrap">
+    <div class="steps-bar"><nav class="steps" aria-label="진행 단계" data-project="ls">
+      <a href="#ls-s" data-step="0">상황</a><i>›</i><a href="#ls-t" data-step="1">해결과제</a><i>›</i><a href="#ls-a" data-step="2">액션</a><i>›</i><a href="#ls-r" data-step="3">결과</a>
+    </nav></div>
+    <div class="p-head">
+      <span class="p-num">01</span>
+      <div>
+        <p class="kicker">PROJECT 01 · 팀장</p>
+        <h2>LawSight — AI 판례 분석 및 소송 전략 시스템</h2>
+        <p class="lead">변호사가 자연어로 사건을 입력하면 유사 판례를 찾고, IRAC 형식의 소송 전략 리포트를 생성하는 AI 리서치 보조 서비스</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>2026 한이음 드림업 (과기정통부) · Team 404 · 4인 · 2026.04 ~ 10</dd></div>
+      <div><dt>본인 역할</dt><dd>팀장(PM) 겸 Data · DB · 배포 인프라 총괄</dd></div>
+      <div><dt>기술 스택</dt><dd>PostgreSQL · ChromaDB · KoSBERT · BM25+RRF · FastAPI · GPT-4o · AWS EC2</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://www.lawsight.co.kr" target="_blank" rel="noopener">www.lawsight.co.kr ↗</a></dd></div>
+    </dl>
+
+    <div class="two">
+      <div class="card" id="ls-s">
+        <h3 class="pill-h"><span class="pill">상황</span>판례 리서치는 수작업, 원천 데이터는 비정형</h3>
+        <ul class="plain">
+          <li><b>변호사의 판례 검색·비교는 사건마다 수작업</b><br>현직 변호사 인터뷰 결과 “사실관계가 비슷한 판례”와 “근거 없는 답변(환각) 배제”가 핵심 니즈</li>
+          <li><b>원천은 국가법령정보 공공 API — 목록과 본문이 분리</b><br>판결문은 장문의 비정형 텍스트</li>
+          <li><b>표기 불일치·중복이 섞인 원시 데이터</b><br>같은 법원이 여러 이름으로 기록(원시 104종), 동일 판례 중복 수집 발생</li>
+          <li><b>제한된 자원과 일정</b><br>4인 · 7개월, 클라우드 지원금 범위의 EC2 단일 인스턴스에서 운영</li>
+        </ul>
+      </div>
+      <div class="card" id="ls-t">
+        <h3 class="pill-h"><span class="pill pill-dark">해결 과제</span>데이터가 검색 품질을 결정한다</h3>
+        <ol class="num">
+          <li><b>대규모 판례 수집 자동화</b><span>2단계 API 호출로 수만 건을 중단 없이, 재실행 가능한 구조로 수집</span></li>
+          <li><b>비정형 판결문 정제·표준화</b><span>파싱 · 법원명 표준화 · 중복 제거 · 테이블 간 정합성 보장</span></li>
+          <li><b>정형 + 벡터 저장소 설계</b><span>메타·본문은 PostgreSQL, 의미 검색은 ChromaDB로 역할 분리</span></li>
+          <li><b>제한 자원에서 실서비스 운영</b><span>검색 응답 속도·메모리 안정성 확보, HTTPS 배포</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub" id="ls-a">액션 ① 수집 · 전처리 파이프라인 설계 및 개발</h3>
+    <p class="desc">데이터 수집처리 정의서로 기준을 먼저 확정한 뒤, 수집 → 파싱 → 정제·검증 → 적재 → 임베딩 5단계를 Python으로 직접 구현했습니다.</p>
+    <div class="pipeline">
+      <div class="step"><p class="step-h">01 수집<small>collect_cases.py</small></p>
+        <ul><li>국가법령정보 Open API 2단계 REST 호출 (목록 → 판례일련번호별 본문)</li><li>수집 대상·범위·방법은 정의서 기준으로 관리</li><li>초기 3,503건 → 범위 확장 재수집 (수집 상한 대비 약 92%)</li></ul>
+        <p class="step-m"><b>41,438건</b>판례 수집 (11.8배)</p></div>
+      <div class="step"><p class="step-h">02 파싱<small>parse_judgment</small></p>
+        <ul><li>사건 메타(사건번호·법원·선고일)와 판결 본문 분리</li><li>CASE_ · JUDGMENT 테이블 구조에 맞게 필드 매핑</li><li>가변 항목은 JSONB 컬럼으로 보존</li></ul>
+        <p class="step-m"><b>1 : 1</b>CASE_ : JUDGMENT 분리 적재</p></div>
+      <div class="step"><p class="step-h">03 정제 · 검증<small>정규화 · 검증 스크립트</small></p>
+        <ul><li>법원명 원시 표기를 표준 법원명 매핑으로 정규화</li><li>동일 판례 중복 66건 제거</li><li>1:1 정합성 검증 스크립트로 누락·고아 레코드 점검</li></ul>
+        <p class="step-m"><b>104 → 73</b>법원명 표준화</p></div>
+      <div class="step"><p class="step-h">04 적재<small>PostgreSQL (EC2)</small></p>
+        <ul><li>ERD v1 → v2, 최종 11 테이블 DDL 작성</li><li>FK ON DELETE CASCADE로 참조 무결성 확보</li><li>인덱스 14개 (본문·JSONB 검색용 GIN 2개)</li></ul>
+        <p class="step-m"><b>11 / 14</b>테이블 / 인덱스</p></div>
+      <div class="step"><p class="step-h">05 임베딩 · 인덱싱<small>KoSBERT · ChromaDB · BM25</small></p>
+        <ul><li>판결문 청크 분할 → KoSBERT(ko-sbert-nli) 임베딩</li><li>체크포인트를 실제 저장 건수 기준으로 관리해 중단 지점부터 재개</li><li>ChromaDB 2개 컬렉션 분할 적재 + BM25 키워드 인덱스</li></ul>
+        <p class="step-m"><b>726,814</b>임베딩 청크</p></div>
+    </div>
+
+    <div class="principles">
+      <div><b>문서 우선 설계</b><span>데이터 요구사항(FR-DATA) 7건과 수집처리 정의서(대상·방법·전처리·정합성 기준)를 먼저 확정하고 코드로 구현</span></div>
+      <div><b>재실행 가능한 파이프라인</b><span>단계별 스크립트 분리 + 체크포인트 재개 구조 → 72만 청크 전면 재생성도 처음부터 다시 돌리지 않고 수행</span></div>
+      <div><b>검증을 파이프라인 안에</b><span>적재 후 정합성 검증 스크립트로 1:1 관계·중복·누락을 매 수집 주기마다 확인</span></div>
+    </div>
+
+    <h3 class="sub">액션 ② 저장소 · 서비스 구성</h3>
+    <p class="desc">데이터 계층(수집 ~ 벡터 인덱스)을 단독 설계·구축하고, 기능 계층은 성능 개선, 서비스 계층은 배포 인프라를 담당했습니다.</p>
+    <div class="figs figs-2">
+      <figure><button class="zoom" data-src="assets/img/ls-architecture.jpg"><img src="assets/img/ls-architecture.jpg" alt="LawSight 서비스 구성도: 변호사 → React → FastAPI → 하이브리드 검색 → GPT-4o, PostgreSQL·ChromaDB 저장소" loading="lazy"></button><figcaption>서비스 구성도 — 공공 API 수집 → PostgreSQL · ChromaDB → 하이브리드 검색 → IRAC 리포트</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/ls-erd.jpg"><img src="assets/img/ls-erd.jpg" alt="LawSight 테이블 구성도(ERD), 11개 테이블" loading="lazy"></button><figcaption>테이블 구성도(ERD) — 11 테이블 · 인덱스 14개 (클릭하면 확대)</figcaption></figure>
+    </div>
+
+    <h3 class="sub">액션 ③ 운영 장애 대응</h3>
+    <p class="desc">문제 → 원인 → 조치 → 효과를 측정 가능한 지표로 정리했습니다.</p>
+    <div class="cases">
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 1</span>요청마다 BM25 인덱스 재로딩 — 병목 원인 분석·개선</p>
+        <dl>
+          <dt>문제</dt><dd>검색 요청마다 383MB 인덱스를 디스크에서 재로딩 → 20~60초 타임아웃</dd>
+          <dt>원인</dt><dd>인덱스 로딩이 요청 처리 경로 안에 있어 매 요청이 I/O + 역직렬화 비용을 전부 부담</dd>
+          <dt>조치</dt><dd>검색 서비스를 모듈 레벨 인스턴스로 전환, 서버 시작 시 1회만 로딩</dd>
+        </dl>
+        <p class="badge">20~60초 → <b>0.68초</b> · 실패율 0%</p>
+      </article>
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 2</span>메모리 부족(OOM) — 제한 자원 환경에서의 팀 공동 대응</p>
+        <dl>
+          <dt>문제</dt><dd>RAM 4GB에서 인덱스·모델·벡터DB 동시 상주 → OOM killer가 백엔드 종료</dd>
+          <dt>원인</dt><dd>journalctl 추적 — 인스턴스 증설 후에도 재발해 단순 사양 문제가 아님을 확인, 메모리 상주 객체와 검색 범위를 함께 점검</dd>
+          <dt>조치</dt><dd>t3.medium 증설 · swap 4GB 구성 (팀: BM25 인덱싱 범위 축소)</dd>
+        </dl>
+        <p class="badge">swap 3.2GB → <b>687MB</b></p>
+      </article>
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 3</span>ChromaDB 대량 적재 세그폴트 — 분할 적재 및 재구축</p>
+        <dl>
+          <dt>문제</dt><dd>72만 청크를 단일 컬렉션에 적재하는 중 세그폴트 반복</dd>
+          <dt>원인</dt><dd>DB 무결성은 정상, Python 3.11 / 3.14 모두에서 재현 → 단일 컬렉션 규모·메모리 한계를 우선 원인으로 판단</dd>
+          <dt>조치</dt><dd>2개 컬렉션(571,603 / 152,326)으로 분할 적재, Python 3.11 소스 빌드 + 전용 venv, 체크포인트로 중단 지점부터 재개</dd>
+        </dl>
+        <p class="badge"><b>723,929</b> 청크 적재 완료</p>
+      </article>
+    </div>
+
+    <h3 class="sub" id="ls-r">결과 · 서비스 화면</h3>
+    <div class="metrics">
+      <div><b>41,438</b><span>판례 수집 (초기 3,503 → 최종)</span></div>
+      <div><b>726,814</b><span>KoSBERT 임베딩 청크</span></div>
+      <div><b>11 / 14</b><span>PostgreSQL 테이블 / 인덱스</span></div>
+      <div><b>104 → 73</b><span>법원명 원시 유형 표준화</span></div>
+      <div class="hot"><b>0.68초</b><span>검색 응답 (20~60초 → warm)</span></div>
+      <div class="hot"><b>상위 30%</b><span>한이음 중간평가 우수</span></div>
+    </div>
+    <div class="figs figs-2">
+      <figure><button class="zoom" data-src="assets/img/ls-search.jpg"><img src="assets/img/ls-search.jpg" alt="LawSight 판례 검색 화면" loading="lazy"></button><figcaption>판례 검색</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/ls-compare.jpg"><img src="assets/img/ls-compare.jpg" alt="LawSight 승소/패소 비교표 화면" loading="lazy"></button><figcaption>승소 / 패소 비교표</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/ls-report.jpg"><img src="assets/img/ls-report.jpg" alt="LawSight IRAC 전략 리포트 화면" loading="lazy"></button><figcaption>전략 리포트 (IRAC)</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/ls-report2.jpg"><img src="assets/img/ls-report2.jpg" alt="LawSight 전략 리포트 상세 화면" loading="lazy"></button><figcaption>전략 리포트 상세</figcaption></figure>
+    </div>
+    <h3 class="sub">수행 및 산출물</h3>
+    <div class="deliv">
+      <div><p class="deliv-h">01 분석 <small>본인 주도 4 / 전체 5</small></p><ul><li><b>요구사항 정의서 총괄</b>5개 모듈 · 35개 기능 요구사항</li><li><b>데이터 요구사항 (FR-DATA)</b>수집 · 전처리 · 인덱싱 7건</li><li><b>시장 / 기술 환경 분석</b>경쟁 서비스 3사 기능 · 가격 비교</li><li><b>현직 변호사 인터뷰</b>무환각 · 사실관계 유사성 니즈 도출</li></ul></div>
+      <div><p class="deliv-h">02 설계 <small>본인 주도 4 · 협업 1 / 전체 6</small></p><ul><li><b>서비스 구성도 · 흐름도</b>수집 · 인덱싱 파이프라인 흐름</li><li><b>데이터 수집처리 정의서</b>대상 · 방법 · 전처리 · 정합성 기준</li><li><b>ERD v1 → v2</b>PostgreSQL + ChromaDB 저장소 분리</li><li><b>테이블/필드/도메인 정의서</b>데이터사전 포함 명세서 4시트</li></ul></div>
+      <div><p class="deliv-h">03 개발 <small>본인 주도 4 · 협업 1 / 전체 6</small></p><ul><li><b>수집 · 전처리 프로그램</b>collect_cases.py · parse_judgment · 정규화</li><li><b>DB 구축</b>11 테이블 · FK CASCADE · GIN 인덱스</li><li><b>임베딩 · 벡터 인덱싱</b>KoSBERT · ChromaDB 분할 적재</li><li><b>AWS 배포 · 운영</b>EC2 · nginx · systemd · HTTPS</li></ul></div>
+    </div>
+    <div class="result">
+      <h4>실서비스 운영까지 완주</h4>
+      <ul>
+        <li>www.lawsight.co.kr 실서비스 배포 (EC2 t3.medium · nginx · HTTPS)</li>
+        <li>검색 타임아웃 해소 — BM25 1회 로딩으로 응답 0.68초 · 실패율 0%</li>
+        <li>개발설계서 · 완료보고서 제출, 중간평가 상위 30% · 장려상 후보</li>
+        <li>팀장으로서 분석(요구사항 35건 · FR-DATA 7건) → 설계(ERD · 정의서) → 개발 산출물 총괄</li>
+      </ul>
+      <p class="learned"><b>배운 점</b> 검색 품질은 모델보다 데이터 정제와 재실행 가능한 파이프라인에서 결정된다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECT 02 ===================== -->
+<section class="section project alt" id="mytaskpilot">
+  <div class="wrap">
+    <div class="steps-bar"><nav class="steps" aria-label="진행 단계" data-project="mtp">
+      <a href="#mtp-s" data-step="0">상황</a><i>›</i><a href="#mtp-t" data-step="1">해결과제</a><i>›</i><a href="#mtp-a" data-step="2">액션</a><i>›</i><a href="#mtp-r" data-step="3">결과</a>
+    </nav></div>
+    <div class="p-head">
+      <span class="p-num">02</span>
+      <div>
+        <p class="kicker">PROJECT 02 · Data / AI 담당</p>
+        <h2>My Task Pilot — AI Agent 업무 자동화</h2>
+        <p class="lead">텍스트 · 음성(STT) · 이미지(OCR) 입력을 분석해 일정 · 이메일 · 할 일을 자동 등록하는 개인 업무 비서 서비스</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>2026 한이음 드림업 + 졸업 프로젝트 · Team404 · 3인 · 2026.04 ~ 10</dd></div>
+      <div><dt>본인 역할</dt><dd>Data / AI — DB 설계 · 관리, RAG · 멀티모달 파이프라인, 문서 총괄</dd></div>
+      <div><dt>기술 스택</dt><dd>PostgreSQL + pgvector · Whisper · GPT-4o-mini Vision · text-embedding-3-small · AWS EC2</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://www.mytaskpilot.kr" target="_blank" rel="noopener">www.mytaskpilot.kr ↗</a></dd></div>
+    </dl>
+
+    <div class="two">
+      <div class="card" id="mtp-s">
+        <h3 class="pill-h"><span class="pill">상황</span>입력은 비정형, 저장소는 프로토타입 수준</h3>
+        <ul class="plain">
+          <li><b>반복 업무가 여러 앱에 흩어져 수작업 처리</b><br>일정 등록 · 할 일 정리 · 이메일 초안을 매번 직접 입력</li>
+          <li><b>입력이 음성 · 이미지 · 자유 텍스트</b><br>그대로는 DB에 저장·조회할 수 없어 텍스트화와 구조화가 먼저 필요</li>
+          <li><b>초기 구현은 로컬 SQLite</b><br>다중 사용자 · 벡터 검색 · 상시 운영 요구를 감당하기 어려움</li>
+          <li><b>AI 오판 시 일정·메일이 잘못 실행될 위험</b><br>사용자 승인(HITL)과 서버 측 권한 검증 필요</li>
+        </ul>
+      </div>
+      <div class="card" id="mtp-t">
+        <h3 class="pill-h"><span class="pill pill-dark">해결 과제</span>비정형 입력을 신뢰할 수 있는 데이터로</h3>
+        <ol class="num">
+          <li><b>비정형 입력의 정형화</b><span>음성 · 이미지 · 텍스트를 일정 / 할 일 / 메일 레코드로 변환</span></li>
+          <li><b>운영형 데이터 모델로 전환</b><span>SQLite → PostgreSQL + pgvector, users 중심 6 테이블 설계</span></li>
+          <li><b>개인화 RAG</b><span>사용자 이력을 임베딩해 유사 이력 top-3를 응답에 반영</span></li>
+          <li><b>운영 DB 신뢰성</b><span>클라우드 운영 DB와 설계 문서 일치, 권한 우회 취약점 차단</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub" id="mtp-a">액션 ① 비정형 데이터 파이프라인 · AWS EC2</h3>
+    <div class="two two-wide">
+      <div class="flow">
+        <div class="flow-row"><span class="flow-k">입력 수집</span><p><b>텍스트 · 음성 · 이미지</b>채팅, 음성 녹음, 일정 캡처·문서 사진을 하나의 입력 채널로 수용</p></div>
+        <div class="flow-row"><span class="flow-k">텍스트화</span><p><b>Whisper STT · GPT-4o-mini Vision OCR</b>샘플 입력으로 STT / OCR 정확도 검증</p></div>
+        <div class="flow-row"><span class="flow-k">구조화</span><p><b>Function Calling 의도 분류 → 필드 추출 → HITL 승인</b>일정 / 할 일 / 메일 의도와 필드를 JSON으로 추출, 사용자 승인 후 확정</p></div>
+        <div class="flow-row me"><span class="flow-k">정형 저장</span><p><b>PostgreSQL 6 테이블 (users 중심)</b>schedules · todos · email_drafts 저장, agent_executions에 실행 이력 기록</p></div>
+        <div class="flow-row me"><span class="flow-k">벡터화 · RAG</span><p><b>text-embedding-3-small (1536차원) → pgvector</b>코사인 유사도 top-3 이력을 응답에 반영해 개인화</p></div>
+        <p class="legend"><i class="sw me"></i>본인 주도 (저장 · 벡터 스키마) <i class="sw"></i>기획·검증 참여 / 팀원 구현 · 본인 연동</p>
+      </div>
+      <div class="card">
+        <h3>왜 클라우드(AWS EC2)인가</h3>
+        <ol class="num">
+          <li><b>pgvector 확장을 직접 설치·제어</b><span>PostgreSQL 버전과 vector 확장을 직접 관리할 서버 필요</span></li>
+          <li><b>24시간 접속되는 실서비스</b><span>도메인 · Nginx · HTTPS, Google OAuth 콜백 등 상시 응답 서버</span></li>
+          <li><b>팀 공용 단일 운영 DB</b><span>3인이 같은 DB 기준으로 개발, SSH · psql로 운영 스키마 직접 검증</span></li>
+          <li><b>작게 시작해 필요 시 확장</b><span>소규모 인스턴스로 비용 관리, 부하에 맞춰 사양 조정</span></li>
+        </ol>
+        <p class="me-box"><b>본인 수행</b> EC2 Ubuntu에 PostgreSQL + pgvector 설치 → SQLite 스키마·데이터 마이그레이션 → SSH · psql로 운영 스키마 전수 대조</p>
+      </div>
+    </div>
+
+    <h3 class="sub">액션 ② 운영 DB 정합성 · 보안 검증</h3>
+    <p class="desc">문서가 아닌 운영 DB와 실제 권한 흐름을 기준으로 검증했습니다.</p>
+    <div class="cases cases-2">
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 1</span>ERD ↔ 실제 운영 DB 스키마 불일치 전수 검증</p>
+        <dl>
+          <dt>문제</dt><dd>제작설계서 제출 전 최종 점검에서 설계와 구현 사이 다수 불일치 (agent_executions 설계 12 vs 구현 6 컬럼, briefings 테이블 미구현)</dd>
+          <dt>원인</dt><dd>백엔드 담당이 스키마·인증 흐름을 바꿀 때 DB 설계 담당에게 즉시 공유되지 않는 구조</dd>
+          <dt>조치</dt><dd>EC2 운영 서버에 SSH 접속해 psql로 6개 테이블을 하나씩 대조, 구현 기준으로 ERD · 테이블 정의서 전면 수정, “아키텍처 변경은 즉시 문서화·공유” 원칙 합의</dd>
+        </dl>
+        <p class="badge"><b>6 / 6</b> 테이블 문서 · 운영 스키마 일치</p>
+      </article>
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 2</span>IDOR (권한 우회) 취약점 발견</p>
+        <dl>
+          <dt>문제</dt><dd>클라이언트가 전달한 user_id를 서버가 그대로 신뢰해 처리하는 구조 발견</dd>
+          <dt>원인</dt><dd>서버 측 사용자 식별이 없어 타 사용자 데이터 접근이 가능</dd>
+          <dt>조치</dt><dd>팀에 즉시 공유 → 서버가 JWT로 사용자를 직접 식별, 권한 없는 요청은 403 반환하도록 전 엔드포인트에 적용</dd>
+        </dl>
+        <p class="badge"><b>전 엔드포인트</b> 서버 측 권한 검증</p>
+      </article>
+    </div>
+
+    <h3 class="sub" id="mtp-r">결과 · 서비스 화면</h3>
+    <div class="metrics">
+      <div class="hot"><b>12 / 12</b><span>기능 100% 구현</span></div>
+      <div><b>6 테이블</b><span>PostgreSQL 데이터 모델</span></div>
+      <div><b>1536</b><span>pgvector 임베딩 차원</span></div>
+      <div><b>226건</b><span>합성 검증 데이터 · 페르소나 3종</span></div>
+      <div><b>0.1~0.2초</b><span>유사도 검색 (테스트 환경)</span></div>
+      <div class="hot"><b>6 / 6</b><span>운영 DB 대조 완료 테이블</span></div>
+    </div>
+    <div class="figs figs-4 phones">
+      <figure><button class="zoom" data-src="assets/img/mtp-chat.jpg"><img src="assets/img/mtp-chat.jpg" alt="My Task Pilot AI 채팅 화면" loading="lazy"></button><figcaption>AI 채팅</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mtp-schedule.jpg"><img src="assets/img/mtp-schedule.jpg" alt="My Task Pilot 일정 등록 화면" loading="lazy"></button><figcaption>일정 등록</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mtp-mail.jpg"><img src="assets/img/mtp-mail.jpg" alt="My Task Pilot AI 메일 작성 화면" loading="lazy"></button><figcaption>AI 메일 작성</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mtp-review.jpg"><img src="assets/img/mtp-review.jpg" alt="My Task Pilot 메일 검토 및 전송 화면" loading="lazy"></button><figcaption>메일 검토 / 전송</figcaption></figure>
+    </div>
+    <h3 class="sub">수행 및 산출물</h3>
+    <div class="deliv">
+      <div><p class="deliv-h">01 분석 <small>본인 주도 2 · 협업 1 / 전체 3</small></p><ul><li><b>요구사항 정의서</b>일정 · 할 일 · 이메일 이력 저장 범위</li><li><b>시나리오 정의서</b>페르소나 3종 기반 사용 시나리오</li><li class="co"><b>기능 요구사항 정의 (협업)</b>12개 기능 · HITL 승인 원칙</li></ul></div>
+      <div><p class="deliv-h">02 설계 <small>본인 주도 3 · 협업 1 / 전체 4</small></p><ul><li><b>ERD · 테이블정의서</b>users 중심 6개 테이블 관계 설계</li><li><b>pgvector 스키마 설계</b>vector(1536) · 코사인 유사도</li><li><b>RAG 개인화 설계</b>text-embedding-3-small · top-3 반영</li><li class="co"><b>서비스 · 메뉴 구성도 (협업)</b>입력 → Agent → HITL → 저장 흐름</li></ul></div>
+      <div><p class="deliv-h">03 개발 <small>본인 주도 3 · 협업 1 / 전체 5</small></p><ul><li><b>SQLite → PostgreSQL 전환</b>EC2 Ubuntu 설치 · 스키마 마이그레이션</li><li><b>합성 데이터 · RAG 검증</b>226건으로 개인화 동작 검증</li><li><b>운영 DB 정합성 전수 검증</b>SSH · psql 스키마 대조 · 문서 정정</li><li class="co"><b>OCR/STT · 보안 검증 (협업)</b>정확도 검증 · IDOR 발견/공유</li></ul></div>
+    </div>
+    <div class="result">
+      <h4>데이터를 믿을 수 있는 서비스</h4>
+      <ul>
+        <li>www.mytaskpilot.kr 실서비스 배포</li>
+        <li>음성 · 이미지 입력이 일정 · 할 일 · 메일 레코드로 저장되는 파이프라인 완성</li>
+        <li>운영 DB 6개 테이블과 ERD · 테이블 정의서 일치, 변경 즉시 문서화 원칙 합의</li>
+        <li>개발보고서 21p · 제작설계서 53p 총괄, 중간평가 상위 30% · 장려상 후보</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROJECT 03 ===================== -->
+<section class="section project" id="modeling">
+  <div class="wrap">
+    <div class="steps-bar"><nav class="steps" aria-label="진행 단계" data-project="mv">
+      <a href="#mv-s" data-step="0">상황</a><i>›</i><a href="#mv-t" data-step="1">해결과제</a><i>›</i><a href="#mv-a" data-step="2">액션</a><i>›</i><a href="#mv-r" data-step="3">결과</a>
+    </nav></div>
+    <div class="p-head">
+      <span class="p-num">03</span>
+      <div>
+        <p class="kicker">PROJECT 03 · 개인</p>
+        <h2>영화 예매 플랫폼 — 표준 기반 데이터 모델링</h2>
+        <p class="lead">데이터모델링 교육 직후, 요구사항 정의부터 논리 · 물리 ERD, DB 구축, 예약 기능 구현까지 단독 수행</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>3학년 겨울방학 개인 프로젝트 · 2026.01 ~ 02 (2개월)</dd></div>
+      <div><dt>본인 역할</dt><dd>단독 수행 — 요구사항 · 모델링 · DB 구축 · 구현</dd></div>
+      <div><dt>기술 스택</dt><dd>DA# Modeler · PostgreSQL · Node.js / Express · HTML / JS</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://movie-booking-platform-ui.vercel.app" target="_blank" rel="noopener">movie-booking-platform-ui.vercel.app ↗</a></dd></div>
+    </dl>
+
+    <div class="two">
+      <div class="card" id="mv-s">
+        <h3 class="pill-h"><span class="pill">상황</span>배운 모델링을 실제 서비스에 적용할 기회</h3>
+        <ul class="plain">
+          <li><b>데이터모델링 교육을 막 수료한 시점</b><br>교육에서 배운 절차를 실제 서비스 설계에 그대로 적용해 보기로 결정</li>
+          <li><b>영화 · 상영 · 좌석 · 예약이 얽힌 관계형 도메인</b><br>관계 설계가 조회 쿼리 복잡도와 예약 정합성을 좌우</li>
+          <li><b>화면 개발 경험 부족</b><br>DB · 백엔드 중심으로 역량을 쌓아 와 UI 구현은 미숙</li>
+        </ul>
+      </div>
+      <div class="card" id="mv-t">
+        <h3 class="pill-h"><span class="pill pill-dark">해결 과제</span>설계 → 구현을 한 사이클로</h3>
+        <ol class="num">
+          <li><b>표준 기반 모델링</b><span>단어 · 도메인 표준 정의 → 논리 ERD → 물리 ERD</span></li>
+          <li><b>무결성 · 조회 성능 확보</b><span>FK 제약조건과 조회 조건 기준 인덱스 전략 수립</span></li>
+          <li><b>설계를 기능으로 연결</b><span>JOIN 기반 예약 · 좌석 쿼리 → API → 화면까지 구현</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <h3 class="sub" id="mv-a">액션 ① ERD 설계</h3>
+    <p class="desc">영화 예매 사이트 구현을 위한 회원 · 영화 · 상영관 · 예매 · 결제 ERD를 DA# Modeler로 설계했습니다.</p>
+    <figure class="fig-wide"><button class="zoom" data-src="assets/img/mv-erd.jpg"><img src="assets/img/mv-erd.jpg" alt="영화 예매 플랫폼 ERD: 회원, 영화, 상영관, 상영, 좌석, 예매, 결제 엔터티와 관계" loading="lazy"></button><figcaption>영화 예매 플랫폼 ERD — 회원 · 영화 · 상영관 · 예매 · 결제 (클릭하면 확대)</figcaption></figure>
+
+    <h3 class="sub">액션 ② 모델링 → 구현 절차</h3>
+    <ol class="chain">
+      <li class="on">요구사항 정의</li><li class="on">표준 용어 · 도메인</li><li class="on">논리 ERD</li><li class="on">물리 ERD</li><li class="on">PostgreSQL DDL</li><li>Express API</li><li>예약 · 좌석 쿼리</li><li>웹 화면</li>
+    </ol>
+    <p class="desc">DA# Modeler로 논리 · 물리 ERD 설계 → PostgreSQL 테이블 · 외래키 · 인덱스 구축 → JOIN 기반 예약 · 좌석 쿼리를 Express API로 연결. 화면은 AI 프롬프트 기반 바이브코딩으로 구현하고, 본인은 DB · API 설계에 집중했습니다.</p>
+
+    <div class="cases">
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 1</span>용어 · 명명 규칙 불일치</p>
+        <dl><dt>문제</dt><dd>같은 의미의 속성이 테이블마다 다른 이름·타입으로 정의될 위험</dd>
+            <dt>원인</dt><dd>설계 초기에 명명 규칙과 도메인 기준이 없었음</dd>
+            <dt>조치</dt><dd>단어 · 도메인 표준을 먼저 정의하고 전 테이블 컬럼명 · 데이터 타입을 표준에 맞춰 통일</dd></dl>
+        <p class="badge"><b>표준 적용</b> ERD · 쿼리 가독성 확보</p>
+      </article>
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 2</span>스키마로 인한 쿼리 복잡도</p>
+        <dl><dt>문제</dt><dd>예약 · 좌석 조회 시 여러 테이블 JOIN이 얽혀 쿼리가 복잡해짐</dd>
+            <dt>원인</dt><dd>상영 · 좌석 · 예약 간 관계 설계가 실제 기능 흐름을 충분히 반영하지 못함</dd>
+            <dt>조치</dt><dd>기능 흐름 기준으로 관계 · 외래키 재정의, 조회 조건 컬럼에 인덱스 적용</dd></dl>
+        <p class="badge"><b>ERD 우선</b> 이후 팀 프로젝트에서 ERD 먼저 확정</p>
+      </article>
+      <article class="case">
+        <p class="case-t"><span class="case-n">Case 3</span>화면 개발 경험 부족</p>
+        <dl><dt>문제</dt><dd>프론트엔드 경험이 적어 화면 구현 일정이 지연될 위험</dd>
+            <dt>원인</dt><dd>DB · 백엔드 중심으로 역량을 쌓아 UI 구현 경험 부족</dd>
+            <dt>조치</dt><dd>AI 프롬프트 기반 바이브코딩으로 화면 구현, 본인은 DB · API 설계에 집중</dd></dl>
+        <p class="badge"><b>단독 완성</b> 기획 · 화면까지 수행 영역 확장</p>
+      </article>
+    </div>
+
+    <h3 class="sub" id="mv-r">결과 · 화면</h3>
+    <p class="desc">논리 · 물리 ERD → PostgreSQL 구축 → JOIN 기반 예약 · 좌석 기능을 화면까지 단독 구현했습니다.</p>
+    <div class="figs figs-4 darkfig">
+      <figure><button class="zoom" data-src="assets/img/mv-home.jpg"><img src="assets/img/mv-home.jpg" alt="영화 예매 플랫폼 홈 화면" loading="lazy"></button><figcaption>홈</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mv-timetable.jpg"><img src="assets/img/mv-timetable.jpg" alt="상영시간표 화면" loading="lazy"></button><figcaption>상영시간표</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mv-book1.jpg"><img src="assets/img/mv-book1.jpg" alt="빠른 예매 화면" loading="lazy"></button><figcaption>예매 — 영화 · 극장 · 시간 선택</figcaption></figure>
+      <figure><button class="zoom" data-src="assets/img/mv-book2.jpg"><img src="assets/img/mv-book2.jpg" alt="좌석 선택 화면" loading="lazy"></button><figcaption>예매 — 좌석 선택</figcaption></figure>
+    </div>
+    <h3 class="sub">수행 및 산출물</h3>
+    <div class="deliv">
+      <div><p class="deliv-h">01 분석 <small>본인 주도 2 / 전체 2</small></p><ul><li><b>요구사항 정의서</b>조회 · 예매 · 예약 확인 기능 정의</li><li><b>업무 흐름 파악</b>영화 → 상영 → 좌석 → 예약 흐름</li></ul></div>
+      <div><p class="deliv-h">02 설계 <small>본인 주도 4 / 전체 4</small></p><ul><li><b>단어/도메인 표준 정의서</b>용어 · 데이터 타입 기준 수립</li><li><b>논리 ERD</b>엔터티 · 관계 · 식별자 정의</li><li><b>테이블정의서</b>테이블 · 컬럼 · 키 · 제약조건</li><li><b>기능정의서 · 화면설계서</b>예약 · 좌석 조회 조건 기준</li></ul></div>
+      <div><p class="deliv-h">03 개발 <small>본인 주도 4 / 전체 4</small></p><ul><li><b>DDL · 제약조건 구현</b>PostgreSQL 테이블 · 외래키</li><li><b>Express API 구현</b>Node.js 백엔드 · DB 연동</li><li><b>예약 · 좌석 쿼리</b>JOIN 기반 조회 · 예약 처리</li><li><b>웹 화면 구현</b>HTML / JS · 바이브코딩 활용</li></ul></div>
+    </div>
+    <div class="learn-grid">
+      <div><b>표준화 습관</b><span>용어 · 도메인 표준을 먼저 정의</span></div>
+      <div><b>ERD 우선 설계</b><span>스키마가 구현 복잡도를 결정함을 체감</span></div>
+      <div><b>설계 → 구현 연결</b><span>모델이 쿼리 · API로 이어지는 흐름 이해</span></div>
+      <div><b>AI 활용 생산성</b><span>비전문 영역은 바이브코딩으로 보완</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MORE ===================== -->
+<section class="section alt" id="more">
+  <div class="wrap">
+    <p class="kicker">MORE PROJECTS</p>
+    <h2>응용 단계 개인 프로젝트</h2>
+    <div class="two">
+      <div class="card">
+        <p class="small-meta">개인 · 3학년 여름방학 · 2025.07 ~ 08</p>
+        <h3>맞춤형 식단 관리 웹</h3>
+        <p>공공데이터(식품 영양 정보) 약 1,000건을 CSV → PostgreSQL로 연동하고, 권장 칼로리 계산 · 날짜별 영양소 집계 쿼리 · 차트 시각화를 단독 구현</p>
+        <p class="tags"><span class="tag">Spring Boot</span><span class="tag">MyBatis</span><span class="tag">PostgreSQL</span><span class="tag">공공데이터</span></p>
+      </div>
+      <div class="card">
+        <p class="small-meta">개인 · 3학년 알고리즘분석 과제 · 2025.10 ~ 11</p>
+        <h3>신용 리스크 예측 모델링</h3>
+        <p>15만 건 데이터의 결측 · 클래스 불균형(SMOTE)을 보정하고, 검증 전략을 먼저 설계한 뒤 10개 모델을 비교 · 선정</p>
+        <p class="tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">SMOTE</span><span class="tag hot">Test AUROC 0.8585</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>
+      <p class="foot-name">전예원 · Data Engineer</p>
+      <p class="foot-stack">DATA PIPELINE · POSTGRESQL · PGVECTOR · CHROMADB · AWS EC2 · ORACLE</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn" href="assets/portfolio.pdf" download>포트폴리오 PDF</a>
+      <a class="btn js-github" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn js-email" href="#">Email</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="이미지 확대 보기">
+  <button class="lb-close" aria-label="닫기">×</button>
+  <img alt="">
+</dialog>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
