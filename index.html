@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전예원 | Data Engineer Portfolio</title>
+<meta name="description" content="공공 판례 4만 건을 수집·모델링·적재하고, 실서비스로 운영한 신입 데이터 엔지니어 전예원의 포트폴리오">
+<meta property="og:title" content="전예원 | Data Engineer Portfolio">
+<meta property="og:description" content="판례 3,503건 → 41,438건 수집 · 법원명 224→73종 표준화 · 검색 최대 60초 → 0.68초 · 실서비스 운영">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<script>window.PROFILE = { github: "", email: "" };</script>
+
+<header class="nav" id="top">
+  <div class="nav-inner">
+    <a class="brand" href="#top">전예원<span>Data Engineer</span></a>
+    <nav class="nav-links" aria-label="섹션">
+      <a href="#profile">핵심 역량</a>
+      <a href="#rolemap">수행 역할</a>
+      <a href="#lawsight">LawSight</a>
+      <a href="#mytaskpilot">MyTaskPilot</a>
+      <a href="#modeling">영화 예매</a>
+    </nav>
+    <a class="btn btn-sm" href="assets/portfolio.pdf" download>PDF</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">DATA ENGINEER · 신입</p>
+      <h1>공공 판례 4만 건을<br>수집 · 모델링 · 적재하고,<br><em>실서비스로 운영</em>했습니다.</h1>
+      <p class="hero-sub">데이터 수집 · 정제 · 모델링 · 검색 인덱스 · 배포 · 운영</p>
+      <div class="hero-meta">
+        <strong>전예원</strong>
+        <span>수원대학교 컴퓨터소프트웨어학과 (2027.02 졸업예정) · DAsP</span>
+        <span>2026 한이음 드림업 2개 과제 · 중간평가 상위 30%</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#lawsight">대표 프로젝트 보기</a>
+        <a class="btn" href="assets/portfolio.pdf" download>포트폴리오 PDF</a>
+        <a class="btn js-github" href="#" target="_blank" rel="noopener">GitHub</a>
+        <a class="btn js-email" href="#">Email</a>
+      </div>
+    </div>
+    <div class="layers" aria-label="서비스 계층별 수행 범위">
+      <div class="layer"><b>서비스</b><span>UI · API · 배포 · 운영</span></div>
+      <div class="layer"><b>기능</b><span>검색 · RAG · 분석 로직</span></div>
+      <div class="layer layer-on"><b>데이터</b><span>수집 · 정제 · DB 설계 · 벡터 인덱스</span></div>
+      <p class="layer-note">▲ 모든 프로젝트에서 데이터 파트를 주도</p>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="section" id="profile">
+  <div class="wrap">
+    <p class="kicker">PROFILE</p>
+    <h2>핵심 역량</h2>
+    <p class="lead">공공 판례 4만 건을 수집·모델링·적재하고, 실서비스로 운영한 <b class="accent">데이터 엔지니어</b></p>
+
+    <div class="cap-layout">
+      <div class="cap-table" role="table" aria-label="핵심 역량">
+        <div class="cap-row cap-head" role="row"><span role="columnheader">역량</span><span role="columnheader">수행 내역</span><span role="columnheader">성과</span></div>
+        <div class="cap-row" role="row">
+          <b class="cap-name" role="cell">① 데이터 수집 · ETL</b>
+          <ul role="cell"><li>공공 REST API 2단계(목록→본문) 수집 자동화</li><li>체크포인트 기반 대량 데이터 수집 구조 설계</li></ul>
+          <div class="cap-res" role="cell"><b>판례 수집 11배 확대</b><span>판례 3,503건 → 41,438건</span></div>
+        </div>
+        <div class="cap-row" role="row">
+          <b class="cap-name" role="cell">② 데이터 품질 · 정합성</b>
+          <ul role="cell"><li>판결문 파싱, 법원명 표준화, 중복 판례 제거</li><li>설계 문서와 운영 DB 스키마 전수 대조 · 정정</li></ul>
+          <div class="cap-res" role="cell"><b>데이터 정합성 확보</b><span>법원명 224→73종 표준화, 중복 판례 66건 제거</span></div>
+        </div>
+        <div class="cap-row" role="row">
+          <b class="cap-name" role="cell">③ 데이터 모델링 · DB 설계</b>
+          <ul role="cell"><li>요구사항 정의부터 논리 · 물리 ERD, FK · 인덱스 설계</li><li>SQLite → PostgreSQL 이관 수행</li></ul>
+          <div class="cap-res" role="cell"><b>표준 기반 DB 설계</b><span>표준 용어 97개 · 테이블 12개 설계</span></div>
+        </div>
+        <div class="cap-row" role="row">
+          <b class="cap-name" role="cell">④ 개발환경 구성 · 운영</b>
+          <ul role="cell"><li>AWS EC2(Linux) 서버 구축 및 서비스 배포</li><li>성능 저하 · 메모리 장애 원인 추적 및 해결</li></ul>
+          <div class="cap-res" role="cell"><b>검색 속도 · 서버 안정성 개선</b><span>검색 최대 60초 → 0.68초 · 메모리 3.2GB → 687MB</span></div>
+        </div>
+        <p class="cap-sep">차별화 역량</p>
+        <div class="cap-row cap-diff" role="row">
+          <b class="cap-name" role="cell">⑤ 비정형 데이터 처리</b>
+          <ul role="cell"><li>판례 72만 문단 임베딩, 벡터DB 분할 적재</li><li>키워드 + 벡터 하이브리드 검색, 개인화 RAG 연동</li></ul>
+          <div class="cap-res" role="cell"><b>의미 기반 검색 서비스 확장</b><span>판례 72만 문단 적재 · 유사 판례 검색 고도화</span></div>
+        </div>
+      </div>
+
+      <aside class="cap-side">
+        <div class="side-card">
+          <h3>자격 · 교육</h3>
+          <p><b>DAsP</b> 데이터아키텍처 준전문가 취득</p>
+          <p><b>SQLD · OCP</b> 2026.11 응시 예정</p>
+          <p><b>오라클 DB 전문가 과정</b> 수강 중<br><small>아이티윌 · 26.06~26.11 · 튜닝 · 백업/복구</small></p>
+          <p><a class="ext" href="https://persistent-zinc-f8f.notion.site/5f841b6e7c7b41459dcb4788428c2ea3?v=f6b0fcf4a8404347b35e46012a00595b" target="_blank" rel="noopener">오라클 교육 학습 일지 ↗</a></p>
+        </div>
+        <div class="side-card">
+          <h3>평가 · 수상</h3>
+          <p>2026 한이음 드림업 2개 과제 <small>(2026.4~10)</small></p>
+          <p><b class="accent">중간평가 상위 30%</b></p>
+        </div>
+        <div class="side-card">
+          <h3>근거 프로젝트</h3>
+          <p class="proj"><a class="proj-link" href="https://www.lawsight.co.kr" target="_blank" rel="noopener">LawSight ↗</a><a class="proj-url" href="https://www.lawsight.co.kr" target="_blank" rel="noopener">www.lawsight.co.kr</a><small>팀장 · Data · DB · Infra 총괄 | 4인</small></p>
+          <p class="proj"><a class="proj-link" href="https://www.mytaskpilot.kr" target="_blank" rel="noopener">My Task Pilot ↗</a><a class="proj-url" href="https://www.mytaskpilot.kr" target="_blank" rel="noopener">www.mytaskpilot.kr</a><small>Data/AI 담당 | 3인</small></p>
+          <p class="proj"><a class="proj-link" href="https://movie-booking-platform-ui.vercel.app" target="_blank" rel="noopener">영화 예매 플랫폼 ↗</a><a class="proj-url" href="https://movie-booking-platform-ui.vercel.app" target="_blank" rel="noopener">movie-booking-platform-ui<wbr>.vercel.app</a><small>단독 · ERD 설계 · DB 구축</small></p>
+        </div>
+        <div class="side-card">
+          <h3>학력</h3>
+          <p>수원대 컴퓨터소프트웨어학과 · 2027.02 졸업예정</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="rolemap">
+  <div class="wrap">
+    <p class="kicker">ROLE MAP</p>
+    <h2>프로젝트별 수행 역할</h2>
+    <p class="lead">모든 프로젝트에서 <b class="accent">데이터 파트 주도</b></p>
+    <div class="table-scroll">
+      <table class="matrix">
+        <thead>
+          <tr><th rowspan="2">프로젝트 · 역할</th><th colspan="3" class="grp-a">서비스 구성별 수행 범위</th><th colspan="3" class="grp-b2">프로젝트 단계별 수행 범위</th></tr>
+          <tr><th>데이터</th><th>기능</th><th>서비스</th><th>분석</th><th>설계</th><th>개발</th></tr>
+        </thead>
+        <tbody>
+          <tr><th><a href="#lawsight">LawSight</a><small class="role-b">팀장 · 4인 · 2026.04~10</small><small>AI 판례 분석 · 소송전략</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>수집 · 정제 · DB · 벡터DB</td><td><i class="co">협업</i>검색 연동 · 병목 개선</td><td><i class="lead-dot">주도</i>EC2 배포 · 운영</td>
+            <td><i class="lead-dot">주도</i>요구사항 35건 총괄</td><td><i class="co">협업</i>테이블/기능/화면 설계</td><td><i class="co">협업</i>파이프라인/기능/화면</td></tr>
+          <tr><th><a href="#mytaskpilot">MyTaskPilot</a><small class="role-b">Data/AI · 3인 · 2026.04~10</small><small>AI Agent 업무 자동화</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>저장 · 벡터 · DB 이관</td><td><i class="co">협업</i>RAG 개인화 기획 · 검증</td><td><i class="co">협업</i>제출 문서 총괄</td>
+            <td><i class="co">협업</i>요구사항정의</td><td><i class="co">협업</i>테이블/기능/화면 설계</td><td><i class="co">협업</i>기능 구현/테스트</td></tr>
+          <tr><th><a href="#modeling">영화 예매 플랫폼</a><small class="role-b">단독 · 2026.01~02</small><small>표준 기반 데이터 모델링</small></th>
+            <td class="hl"><i class="lead-dot">주도</i>논리 · 물리 ERD</td><td><i class="lead-dot">주도</i>저장 및 화면쿼리</td><td><i class="lead-dot">주도</i>웹 화면 구현</td>
+            <td><i class="lead-dot">주도</i>요구사항 정의서</td><td><i class="lead-dot">주도</i>테이블/기능/화면 설계</td><td><i class="lead-dot">주도</i>Node.js · PostgreSQL</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="etc">
+      <b class="etc-h">기타 개인 프로젝트</b>
+      <div>
+        <p><b>맞춤형 식단 관리 웹</b> 2025.07~08 · 단독 · 공공데이터 수집, 칼로리 · 영양 집계, 차트 시각화 화면 구현 (Spring Boot · MyBatis)</p>
+        <p><b>신용 리스크 예측</b> 2025.10~11 · 단독 · 결측 · 불균형 보정, 10개 AI/ML 모델 비교 · 선정, 정확도 AUROC 0.8585</p>
+      </div>
+    </div>
+    <p class="legend-line"><span class="dot-lead"></span>주도 = 본인이 주도한 영역 <span class="dot-co"></span>협업 = 팀원과 협업한 영역</p>
+  </div>
+</section>
+
+<section class="section project" id="lawsight">
+  <div class="wrap">
+    <div class="p-head">
+      <span class="p-num">01</span>
+      <div>
+        <p class="kicker">PROJECT 01 · LAWSIGHT · 팀장</p>
+        <h2>LawSight <span class="h-sub">› AI 판례 분석 및 소송전략 시스템</span></h2>
+        <p class="lead">변호사가 자연어로 사건을 입력하면 유사 판례를 찾고 소송 전략 리포트를 생성하는 AI 리서치 보조 서비스</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>2026 한이음 드림업 (과기정통부) · Team 404 · 4인 · 2026.04 ~ 10</dd></div>
+      <div><dt>본인 역할</dt><dd>팀장(PM) 겸 Data · DB · 배포 인프라 총괄</dd></div>
+      <div><dt>기술 스택</dt><dd>PostgreSQL · ChromaDB · KoSBERT · BM25+RRF · FastAPI · GPT-4o · AWS EC2</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://www.lawsight.co.kr" target="_blank" rel="noopener">www.lawsight.co.kr ↗</a></dd></div>
+    </dl>
+
+    <p class="situation" id="ls-s"><span class="pill">상황</span>판례 리서치는 수작업, 원천 판결문은 형식이 제각각인 비정형 텍스트</p>
+
+    <div class="star" id="ls-t">
+      <div class="star-head"><span>01 해결과제 <small>무엇이 어려웠나</small></span><span>02 액션 <small>내가 한 일</small></span><span>03 결과 <small>before → after</small></span></div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">1</span><div><b>수집</b><p>중단 시 처음부터 재수집해야 하는 대량 수집 구조</p></div></div>
+        <div class="cell act" data-l="액션"><b>2단계 REST 수집 자동화</b><p>목록 → 본문 자동 수집, 중단 지점부터 재개</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>판례 데이터 11배 확보</b><span>3,503건 → 41,438건</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">2</span><div><b>정제</b><p>같은 법원이 224가지 이름으로 기록, 중복 판례 혼재</p></div></div>
+        <div class="cell act" data-l="액션"><b>표준화 · 정합성 검증 스크립트</b><p>법원명 정규화 · 중복 제거 후 정합성 자동 검증</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>법원명 표준화</b><span>224종 → 73종(약 67%↓) · 중복 66건 제거</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">3</span><div><b>저장</b><p>정형 · 벡터 데이터 대량 적재 중 서버 강제 종료 반복</p></div></div>
+        <div class="cell act" data-l="액션"><b>정형 + 벡터 저장소 분리 설계</b><p>PostgreSQL 11개 테이블 + ChromaDB 분할 적재</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>판례 72만 문단 적재 완료</b><span>적재 실패 → 분할 저장으로 해결</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">4</span><div><b>운영</b><p>요청마다 인덱스 재로딩 → 검색 지연 · 메모리 부족</p></div></div>
+        <div class="cell act" data-l="액션"><b>원인 추적 · 서버 구성</b><p>로그로 원인 추적 → 인덱스 1회 로딩 전환 (팀 협업)</p></div>
+        <div class="cell res res-2" data-l="결과"><div class="rb"><b>검색 속도 개선</b><span>20~60초 → 0.68초</span></div><div class="rb"><b>메모리 79% 감소</b><span>3.2GB → 687MB</span></div></div>
+      </div>
+    </div>
+    <p class="outcome"><b>실서비스 운영</b> (EC2 · nginx · HTTPS) · <b class="ink">한이음 중간평가 상위 30%</b><span class="learn"><b>배운 점</b> 검색 품질은 모델보다 데이터 품질과 지속 수집 파이프라인이 좌우함을 확인</span></p>
+
+    <div class="detail" id="ls-a">
+      <p class="detail-k">상세 구성</p>
+      <h3 class="sub2">데이터 파이프라인</h3>
+      <div class="pipe5">
+        <div><p class="ph">01 수집</p><b>2단계 REST 수집</b><span>체크포인트 재개</span></div>
+        <div><p class="ph">02 파싱</p><b>CASE_ / JUDGMENT</b><span>1:1 분리 적재</span></div>
+        <div><p class="ph">03 정제 · 검증</p><b>법원명 정규화 규칙</b><span>적재 후 검증 자동 실행</span></div>
+        <div><p class="ph">04 적재</p><b>JSONB 가변 항목</b><span>GIN 인덱스 2개</span></div>
+        <div><p class="ph">05 임베딩</p><b>KoSBERT 청크</b><span>2개 컬렉션 분할 적재</span></div>
+      </div>
+
+      <h3 class="sub2">테이블 구성도 (ERD) <small>PostgreSQL 11 테이블 · 인덱스 14개 · FK ON DELETE CASCADE</small></h3>
+      <div class="erd-wrap">
+        <figure class="erd-annot">
+          <button class="zoom" data-src="assets/img/ls-erd.jpg" aria-label="ERD 확대">
+            <img src="assets/img/ls-erd.jpg" alt="LawSight 테이블 구성도(ERD), PostgreSQL 11개 테이블" loading="lazy">
+          </button>
+          <span class="hl-box" style="left:0.5%;top:0;width:54.3%;height:61.5%" aria-hidden="true"></span>
+          <span class="mk" style="left:18.1%;top:36.6%">1</span>
+          <span class="mk" style="left:35.1%;top:53.3%">2</span>
+          <span class="mk" style="left:52%;top:44.2%">3</span>
+          <span class="tag-red" style="left:0.8%;top:63.5%">판례 데이터 계층 · 주도</span>
+          <span class="tag-line" style="left:0.8%;top:70.5%">검색 · 분석 결과 · 서비스 연동</span>
+        </figure>
+        <ol class="erd-notes">
+          <li><b>CASE_ : JUDGMENT 1:1 분리</b>판례 메타와 판결 본문을 분리 적재, 1:1 · 중복 · 누락 자동 검증</li>
+          <li><b>PostgreSQL ↔ ChromaDB 연결</b>CHROMA_ID로 벡터 검색 결과를 원래 판례로 역추적</li>
+          <li><b>JSONB + GIN 인덱스</b>쟁점 등 가변 항목은 JSONB로 보존, GIN 인덱스로 검색</li>
+        </ol>
+      </div>
+
+      <h3 class="sub2">운영 구성 · 장애 대응</h3>
+      <div class="ops">
+        <p class="ops-h">AWS EC2 t3.medium · 단일 서버 · swap 4GB</p>
+        <div class="ops-flow">
+          <div class="ops-node"><b>nginx</b><span>HTTPS</span></div>
+          <i class="ops-arrow" aria-hidden="true"></i>
+          <div class="ops-node"><b>FastAPI</b><span>검색 API</span></div>
+          <i class="ops-arrow" aria-hidden="true"></i>
+          <div class="ops-stores">
+            <div><b>PostgreSQL</b> 11 테이블</div>
+            <div><b>ChromaDB</b> 2개 컬렉션</div>
+            <div><b>BM25 383MB</b> 기동 시 1회 로딩</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="connect" id="ls-r">
+      <div>
+        <h3 class="sub2">서비스 연결 <small>승소 / 패소 비교표</small></h3>
+        <p class="desc"><b>TB_WIN_LOSS_COMPARISON</b>의 승소 · 패소 비교 결과가 이 화면에 표시됩니다.<br>→ 수집 · 정제한 판례가 서비스에 도달하는 지점</p>
+      </div>
+      <figure><button class="zoom" data-src="assets/img/ls-compare.jpg"><img src="assets/img/ls-compare.jpg" alt="LawSight 승소/패소 판례 비교표 화면" loading="lazy"></button></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section project alt" id="mytaskpilot">
+  <div class="wrap">
+    <div class="p-head">
+      <span class="p-num">02</span>
+      <div>
+        <p class="kicker">PROJECT 02 · MY TASK PILOT · Data / AI</p>
+        <h2>MyTaskPilot <span class="h-sub">› AI Agent 업무 자동화 서비스</span></h2>
+        <p class="lead">텍스트 · 음성(STT) · 이미지(OCR) 입력을 분석해 일정 · 이메일 · 할 일을 자동 등록하는 개인 업무 비서 서비스</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>2026 한이음 드림업 + 졸업 프로젝트 · Team404 · 3인 · 2026.04 ~ 10</dd></div>
+      <div><dt>본인 역할</dt><dd>Data / AI : DB 설계 · 관리, 벡터 스키마 · RAG 연동</dd></div>
+      <div><dt>기술 스택</dt><dd>PostgreSQL + pgvector · Whisper · GPT-4o-mini Vision · text-embedding-3-small · AWS EC2</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://www.mytaskpilot.kr" target="_blank" rel="noopener">www.mytaskpilot.kr ↗</a></dd></div>
+    </dl>
+
+    <p class="situation" id="mtp-s"><span class="pill">상황</span>입력은 음성 · 이미지 · 자유 텍스트로 제각각, 저장소는 로컬 DB 사용하여 안정성 저하</p>
+
+    <div class="star" id="mtp-t">
+      <div class="star-head"><span>01 해결과제 <small>무엇이 어려웠나</small></span><span>02 액션 <small>내가 한 일</small></span><span>03 결과 <small>before → after</small></span></div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">1</span><div><b>정형화</b><p>형식이 제각각인 입력이라 그대로는 저장 · 조회 불가</p></div></div>
+        <div class="cell act" data-l="액션"><b>정형 저장 스키마 설계 · 연동</b><p>일정 · 할 일 · 메일 저장 테이블과 실행 이력 테이블 설계</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>입력 3종, 정형 데이터로 통합</b><span>일정 · 할 일 · 메일로 자동 정리, 사용자 승인 후 등록</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">2</span><div><b>전환 및 이관</b><p>로컬 SQLite로는 다중 사용자 · 벡터 검색 · 상시 운영 불가</p></div></div>
+        <div class="cell act" data-l="액션"><b>PostgreSQL + pgvector 이관</b><p>EC2에 PostgreSQL + pgvector 설치, 6개 테이블 이관</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>상시 운영 환경 구축</b><span>로컬 SQLite → AWS EC2 PostgreSQL 이관</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">3</span><div><b>개인화</b><p>과거 이력 저장 구조가 없어 일률적인 응답</p></div></div>
+        <div class="cell act" data-l="액션"><b>벡터 스키마 설계 · 검색 연동</b><p>이력 임베딩 저장 · 유사도 검색 연동 (RAG 검증은 팀 협업)</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>유사도 기반 개인화 검색 구현</b><span>실제 시나리오 226건 검증</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">4</span><div><b>신뢰성</b><p>AI 오실행 위험, 설계 문서와 운영 DB 불일치</p></div></div>
+        <div class="cell act" data-l="액션"><b>운영 DB 전수 대조 · 권한 점검</b><p>테이블 전수 대조 · 문서 정정, 권한 취약점 발견 · 공유</p></div>
+        <div class="cell res res-2" data-l="결과"><div class="rb"><b>설계 ↔ 운영 DB 일치</b><span>6개 테이블 전수 대조 후 문서 정정</span></div><div class="rb"><b>보안 취약점 개선</b><span>다른 사람 정보 접근 차단</span></div></div>
+      </div>
+    </div>
+    <p class="outcome"><b>실서비스 운영</b> (EC2 · PostgreSQL + pgvector) · <b class="ink">한이음 중간평가 상위 30%</b><span class="learn"><b>배운 점</b> 정형 + 비정형 데이터 연계 시 활용성 · 사용성이 함께 높아짐을 확인</span></p>
+
+    <div class="detail" id="mtp-a">
+      <p class="detail-k">상세 구성</p>
+      <div class="two two-wide">
+        <div>
+          <h3 class="sub2">비정형 데이터 파이프라인</h3>
+          <div class="flow flow-arrows">
+            <div class="flow-row"><span class="flow-k">입력 수집</span><p><b>텍스트 · 음성 · 이미지 — 형식이 제각각인 비정형 입력</b>채팅 · 음성 녹음 · 캡처 · 문서 사진을 하나의 채널로 수용</p></div>
+            <div class="flow-row"><span class="flow-k">텍스트화</span><p><b>Whisper STT · GPT-4o-mini Vision OCR</b>음성 · 이미지를 텍스트로 변환, 샘플로 정확도 검증</p></div>
+            <div class="flow-row"><span class="flow-k">구조화</span><p><b>의도 분류 → 필드 추출 → 사용자 승인 (Function Calling)</b>일정 · 할 일 · 메일 의도와 필드를 JSON으로 추출</p></div>
+            <div class="flow-row me"><span class="flow-k">정형 저장</span><p><b>PostgreSQL 6 테이블 (users 중심)</b>일정 · 할 일 · 메일 초안 저장, 실행 이력 기록</p></div>
+            <div class="flow-row me"><span class="flow-k">벡터화 · RAG</span><p><b>text-embedding-3-small (1536차원) → pgvector</b>사용자 이력 임베딩 저장, 유사 이력 top-3를 응답에 반영</p></div>
+          </div>
+          <p class="legend"><i class="sw me"></i>본인 주도 (저장 · 벡터 스키마) <i class="sw"></i>기획 · 검증 참여 / 팀원 구현 · 본인 연동</p>
+        </div>
+        <div>
+          <h3 class="sub2">데이터 모델</h3>
+          <div class="dm">
+            <div class="dm-t"><p class="dm-h">email_drafts <small>2차</small></p><span>메일 초안 · Gmail 연동</span><code>user_id FK · status</code></div>
+            <div class="dm-t dm-core"><p class="dm-h">users</p><span>OAuth 인증 · 토큰 관리</span><code>id PK · 토큰 암호화 저장</code></div>
+            <div class="dm-t dm-me"><p class="dm-h">user_embeddings <small>2차</small></p><span>RAG 개인화 임베딩</span><code>embedding VECTOR(1536)</code></div>
+            <div class="dm-t"><p class="dm-h">schedules</p><span>일정 · 승인 상태 추적</span><code>user_id FK · status</code></div>
+            <div class="dm-t"><p class="dm-h">todos</p><span>할 일 · 입력 통합 저장</span><code>user_id FK · source_type</code></div>
+            <div class="dm-t"><p class="dm-h">agent_executions</p><span>실행 이력 · 감사 기록</span><code>raw_input · intent_type</code></div>
+          </div>
+          <p class="dm-foot"><span>6개 테이블 · 전 테이블 user_id FK → users</span><span>12 → 6 컬럼 정정 (Case 1)</span></p>
+        </div>
+      </div>
+
+      <h3 class="sub2">DB 정합성 · 보안 검증</h3>
+      <div class="cases cases-2">
+        <article class="case">
+          <p class="case-t"><span class="case-n">Case 1</span>ERD ↔ 구현 불일치, DB 스키마 전수 검증</p>
+          <dl><dt>문제</dt><dd>설계 12 vs 구현 6 컬럼, 일부 테이블 미구현</dd>
+              <dt>원인</dt><dd>백엔드 변경 사항이 DB 설계 담당에게 미공유</dd>
+              <dt>조치</dt><dd>전수 대조 → ERD · 정의서 수정, ‘변경 즉시 문서화’ 합의</dd></dl>
+          <p class="badge badge-gray">설계 ↔ 운영 DB 테이블 일치</p>
+        </article>
+        <article class="case">
+          <p class="case-t"><span class="case-n">Case 2</span>타인 정보 접근 취약점 발견</p>
+          <dl><dt>문제</dt><dd>클라이언트가 보낸 user_id를 서버가 그대로 신뢰</dd>
+              <dt>원인</dt><dd>타 사용자 데이터 접근 가능</dd>
+              <dt>조치</dt><dd>팀 공유(본인) → JWT 식별 · 403 차단(팀 적용)</dd></dl>
+          <p class="badge badge-gray">서버 접근 보안 개선</p>
+        </article>
+      </div>
+    </div>
+
+    <div class="connect connect-phones" id="mtp-r">
+      <div>
+        <h3 class="sub2">서비스 연결 <small>비정형 입력 → 승인 → 정형 레코드</small></h3>
+        <ol class="conn-list">
+          <li><b>일정 후보 확인 · 수정</b>승인 시 <code>schedules</code> 저장 · 상태 추적</li>
+          <li><b>메일 초안 검토 → Gmail 전송</b><code>email_drafts</code>에 초안 저장 · 상태 관리</li>
+        </ol>
+        <p class="note">※ 이력은 <code>agent_executions</code>에 기록</p>
+      </div>
+      <div class="phones2">
+        <figure><button class="zoom" data-src="assets/img/mtp-schedule.jpg"><img src="assets/img/mtp-schedule.jpg" alt="MyTaskPilot 일정 등록 화면" loading="lazy"></button><figcaption>① 일정 등록</figcaption></figure>
+        <figure><button class="zoom" data-src="assets/img/mtp-mail.jpg"><img src="assets/img/mtp-mail.jpg" alt="MyTaskPilot 메일 초안 화면" loading="lazy"></button><figcaption>② 메일 초안</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section project" id="modeling">
+  <div class="wrap">
+    <div class="p-head">
+      <span class="p-num">03</span>
+      <div>
+        <p class="kicker">PROJECT 03 · 영화 예매 플랫폼 · 개인</p>
+        <h2>영화 예매 플랫폼 <span class="h-sub">› 표준 기반 데이터 모델링</span></h2>
+        <p class="lead">데이터모델링 교육 직후, 요구사항 정의부터 논리 · 물리 ERD, DB 구축, 예약 기능 구현까지 단독 수행</p>
+      </div>
+    </div>
+
+    <dl class="meta">
+      <div><dt>구분</dt><dd>3학년 겨울방학 개인 프로젝트 · 2026.01 ~ 02 (2개월)</dd></div>
+      <div><dt>본인 역할</dt><dd>요구사항 · 모델링 · DB 구축 · 구현</dd></div>
+      <div><dt>기술 스택</dt><dd>DA# Modeler · PostgreSQL · Node.js</dd></div>
+      <div><dt>서비스</dt><dd><a href="https://movie-booking-platform-ui.vercel.app" target="_blank" rel="noopener">movie-booking-platform-ui.vercel.app ↗</a></dd></div>
+    </dl>
+
+    <p class="situation" id="mv-s"><span class="pill">상황</span>영화 · 상영 · 좌석 · 예매 · 결제가 얽힌 관계형 도메인 설계 필요</p>
+
+    <div class="star" id="mv-t">
+      <div class="star-head"><span>01 해결과제 <small>무엇이 어려웠나</small></span><span>02 액션 <small>내가 한 일</small></span><span>03 결과 <small>만든 것</small></span></div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">1</span><div><b>표준화</b><p>같은 의미가 테이블마다 다른 이름 · 타입으로 생길 위험</p></div></div>
+        <div class="cell act" data-l="액션"><b>표준 사전 선행 정의</b><p>도메인 → 단어 → 용어 순 표준 정의, 상태값은 코드 도메인화</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>표준 사전 구축</b><span>도메인 20개 · 단어 77개 · 용어 97개</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">2</span><div><b>모델링</b><p>회원 · 영화 · 상영관 · 좌석 · 예매 · 결제 간 관계 정의 필요</p></div></div>
+        <div class="cell act" data-l="액션"><b>논리 · 물리 ERD <small>(DA# Modeler 툴 활용)</small></b><p>논리 → 물리 ERD 전환, 테이블정의서 작성</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>테이블 12개 연결 설계</b><span>회원 · 영화 · 좌석 · 예매 · 결제 데이터가 서로 어긋나지 않게 연결</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">3</span><div><b>무결성 · 성능</b><p>잘못된 상태값 입력 시 예약 정합성 훼손</p></div></div>
+        <div class="cell act" data-l="액션"><b>FK · CHECK · 인덱스 설계</b><p>예매 · 결제 흐름 FK 연결, 상태값 CHECK · 조회 인덱스</p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>오류 차단 · 빠른 조회 설계</b><span>CHECK 제약 16개 · 인덱스 21개</span></div></div>
+      </div>
+      <div class="star-row">
+        <div class="cell task" data-l="해결과제"><span class="no">4</span><div><b>구현</b><p>설계 모델의 실제 기능으로 정상 동작 여부 검증 필요</p></div></div>
+        <div class="cell act" data-l="액션"><b>SQL · API · 화면 구현</b><p>JOIN 기반 예매 · 좌석 쿼리를 API로 연결<br><span class="blue-note">※ 화면 개발 : AI 코드 도구 활용</span></p></div>
+        <div class="cell res" data-l="결과"><div class="rb"><b>설계 → 예매 기능 구현 완주</b><span>홈 · 예매 · 상영시간표 · 예매내역 · 고객센터 화면 연동</span></div></div>
+      </div>
+    </div>
+    <p class="outcome"><span class="learn"><b>배운 점</b> 표준화 · 무결성 제약을 설계 단계에 반영해야 서비스 품질이 높아짐을 확인 → LawSight 설계(ERD v1 → v2)에 적용</span></p>
+
+    <div class="detail" id="mv-a">
+      <p class="detail-k">상세 구성</p>
+      <h3 class="sub2">구현 절차</h3>
+      <ol class="chain8">
+        <li class="on">요구사항 정의</li><li class="on">표준 용어 · 도메인</li><li class="on">논리 ERD</li><li class="on">물리 ERD</li><li class="on">PostgreSQL DDL</li><li>Express API</li><li>예약 · 좌석 쿼리</li><li>웹화면</li>
+      </ol>
+      <p class="desc">DA# Modeler로 ERD 설계 → PostgreSQL 구축 → 예약 · 좌석 쿼리 API 연결 (화면은 AI 코딩 도구 활용)</p>
+
+      <div class="two two-erd">
+        <div>
+          <h3 class="sub2">ERD <small>테이블 12개 · FK 12개 · 인덱스 21개 · CHECK 16건 (DA# Modeler)</small></h3>
+          <figure class="fig-wide"><button class="zoom" data-src="assets/img/mv-erd.jpg"><img src="assets/img/mv-erd.jpg" alt="영화 예매 플랫폼 ERD: 회원, 영화, 점포, 상영관, 상영시간표, 좌석, 예매, 결제, 리뷰, 고객문의" loading="lazy"></button><figcaption>클릭하면 확대</figcaption></figure>
+        </div>
+        <div>
+          <h3 class="sub2">표준 사전 <small>도메인 → 단어 → 용어</small></h3>
+          <div class="dict-stats"><div><b>20개</b><span>도메인</span></div><div><b>77개</b><span>단어</span></div><div><b>97개</b><span>용어</span></div></div>
+          <table class="dict">
+            <thead><tr><th>도메인</th><th>약어</th><th>데이터 타입</th></tr></thead>
+            <tbody>
+              <tr><td>ID</td><td>ID</td><td>INT</td></tr>
+              <tr><td>코드20</td><td>CD</td><td>VARCHAR(20)</td></tr>
+              <tr><td>금액</td><td>AMT</td><td>INT</td></tr>
+              <tr><td>일시</td><td>DTM</td><td>TIMESTAMP</td></tr>
+              <tr><td>점수</td><td>SCR</td><td>DECIMAL(3,1)</td></tr>
+            </tbody>
+          </table>
+          <p class="dict-ex"><b>용어 조합 예</b> 회원 + 아이디 → <code>MBR_ID</code> (ID)<br>멤버십 + 등급 → <code>MBRSHP_LVL</code> (코드20)</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="mv-r">
+      <h3 class="sub2">웹 화면 구현</h3>
+      <div class="screens-mv">
+        <figure class="mv-home" style="--ar:0.9743"><button class="zoom" data-src="assets/img/mv-home.jpg"><img src="assets/img/mv-home.jpg" alt="영화 예매 플랫폼 홈 화면" loading="lazy"></button><figcaption>홈</figcaption></figure>
+        <figure style="--ar:1.6868"><button class="zoom" data-src="assets/img/mv-quick.jpg"><img src="assets/img/mv-quick.jpg" alt="빠른 예매 화면: 영화, 극장, 시간 선택" loading="lazy"></button><figcaption>예매</figcaption></figure>
+        <figure style="--ar:1.5982"><button class="zoom" data-src="assets/img/mv-seat.jpg"><img src="assets/img/mv-seat.jpg" alt="좌석 선택 화면" loading="lazy"></button><figcaption>좌석 선택</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <div>
+      <p class="foot-name">전예원 · Data Engineer</p>
+      <p class="foot-stack">DATA PIPELINE · POSTGRESQL · PGVECTOR · CHROMADB · AWS EC2 · ORACLE</p>
+    </div>
+    <div class="hero-actions">
+      <a class="btn" href="assets/portfolio.pdf" download>포트폴리오 PDF</a>
+      <a class="btn js-github" href="#" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn js-email" href="#">Email</a>
+    </div>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="이미지 확대 보기">
+  <button class="lb-close" aria-label="닫기">×</button>
+  <img alt="">
+</dialog>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
